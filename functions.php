@@ -44,7 +44,7 @@ function platform_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'platform' ),
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -94,9 +94,17 @@ add_action( 'widgets_init', 'platform_widgets_init' );
 function platform_scripts() {
 	wp_enqueue_style( 'platform-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'platform-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	if ( SCRIPT_DEBUG || WP_DEBUG ) :
 
-	wp_enqueue_script( 'platform-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+		wp_enqueue_script( 'platform-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+
+		wp_enqueue_script( 'platform-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	else :
+
+		wp_enqueue_script( 'platform-scripts', get_template_directory_uri() . '/js/platform.min.js', array(), '20140606', true );
+
+	endif;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

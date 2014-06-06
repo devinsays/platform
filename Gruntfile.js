@@ -40,6 +40,21 @@ module.exports = function(grunt) {
                 'style.css': ['style.css'],
             }
 		},
+		concat: {
+		    build: {
+		        src: [
+		            'js/skip-link-focus-fix.js',
+		            'js/navigation.js'
+		        ],
+		        dest: 'js/platform.min.js',
+		    }
+		},
+		uglify: {
+		    build: {
+		        src: 'js/platform.min.js',
+		        dest: 'js/platform.min.js'
+		    }
+		},
 	    makepot: {
 	        target: {
 	            options: {
@@ -62,6 +77,8 @@ module.exports = function(grunt) {
     	'sass',
     	'autoprefixer',
     	'csscomb',
+    	'concat:build',
+		'uglify:build',
 		'makepot'
 	]);
 
