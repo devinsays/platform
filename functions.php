@@ -6,6 +6,11 @@
  */
 
 /**
+ * The current version of the theme.
+ */
+define( 'PLATFORM_VERSION', '0.1.0' );
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
@@ -92,17 +97,41 @@ add_action( 'widgets_init', 'platform_widgets_init' );
  * Enqueue scripts and styles.
  */
 function platform_scripts() {
-	wp_enqueue_style( 'platform-style', get_stylesheet_uri() );
+
+	wp_enqueue_style(
+		'platform-style',
+		get_stylesheet_uri(),
+		array(),
+		PLATFORM_VERSION
+	);
 
 	if ( SCRIPT_DEBUG || WP_DEBUG ) :
 
-		wp_enqueue_script( 'platform-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+		wp_enqueue_script(
+			'platform-navigation',
+			get_template_directory_uri() . '/js/navigation.js',
+			array(),
+			PLATFORM_VERSION,
+			true
+		);
 
-		wp_enqueue_script( 'platform-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+		wp_enqueue_script(
+			'platform-skip-link-focus-fix',
+			get_template_directory_uri() . '/js/skip-link-focus-fix.js',
+			array(),
+			PLATFORM_VERSION,
+			true
+		);
 
 	else :
 
-		wp_enqueue_script( 'platform-scripts', get_template_directory_uri() . '/js/platform.min.js', array(), '20140606', true );
+		wp_enqueue_script(
+			'platform-scripts',
+			get_template_directory_uri() . '/js/platform.min.js',
+			array(),
+			PLATFORM_VERSION,
+			true
+		);
 
 	endif;
 
