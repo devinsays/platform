@@ -16,9 +16,23 @@ module.exports = function(grunt) {
 	            }
 	        }
 	    },
+	    autoprefixer: {
+            options: {
+				browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9']
+			},
+			single_file: {
+				src: 'style.css',
+				dest: 'style.css'
+			}
+		},
 	});
 
+	grunt.registerTask( 'default', [
+		'autoprefixer',
+    ]);
+
     grunt.registerTask( 'build', [
+    	'autoprefixer',
 		'makepot'
 	]);
 
