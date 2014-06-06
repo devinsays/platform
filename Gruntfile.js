@@ -6,12 +6,29 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		watch: {
+			files: ['scss/*.scss'],
+			tasks: 'sass',
+			options: {
+				livereload: true,
+			},
+		},
+		sass: {
+			default: {
+		  		options : {
+			  		style : 'expanded'
+			  	},
+			  	files: {
+					'style.css':'scss/style.scss',
+				}
+			}
+		},
     	// https://www.npmjs.org/package/grunt-wp-i18n
 	    makepot: {
 	        target: {
 	            options: {
 	                domainPath: '/languages/',    // Where to save the POT file.
-	                potFilename: 'package.pot',   // Name of the POT file.
+	                potFilename: 'platform.pot',   // Name of the POT file.
 	                type: 'wp-theme'  // Type of project (wp-plugin or wp-theme).
 	            }
 	        }
@@ -28,10 +45,12 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask( 'default', [
+		'sass',
 		'autoprefixer',
     ]);
 
     grunt.registerTask( 'build', [
+    	'sass',
     	'autoprefixer',
 		'makepot'
 	]);
