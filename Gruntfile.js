@@ -23,16 +23,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-    	// https://www.npmjs.org/package/grunt-wp-i18n
-	    makepot: {
-	        target: {
-	            options: {
-	                domainPath: '/languages/',    // Where to save the POT file.
-	                potFilename: 'platform.pot',   // Name of the POT file.
-	                type: 'wp-theme'  // Type of project (wp-plugin or wp-theme).
-	            }
-	        }
-	    },
 	    autoprefixer: {
             options: {
 				browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9']
@@ -42,16 +32,36 @@ module.exports = function(grunt) {
 				dest: 'style.css'
 			}
 		},
+		csscomb: {
+			options: {
+                config: '.csscomb.json'
+            },
+            files: {
+                'style.css': ['style.css'],
+            }
+		},
+		// https://www.npmjs.org/package/grunt-wp-i18n
+	    makepot: {
+	        target: {
+	            options: {
+	                domainPath: '/languages/',    // Where to save the POT file.
+	                potFilename: 'platform.pot',   // Name of the POT file.
+	                type: 'wp-theme'  // Type of project (wp-plugin or wp-theme).
+	            }
+	        }
+	    },
 	});
 
 	grunt.registerTask( 'default', [
 		'sass',
 		'autoprefixer',
+		'csscomb',
     ]);
 
     grunt.registerTask( 'build', [
     	'sass',
     	'autoprefixer',
+    	'csscomb',
 		'makepot'
 	]);
 
