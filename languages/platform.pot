@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Platform 1.0-wpcom\n"
+"Project-Id-Version: Platform 0.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2014-06-06 22:26:15+00:00\n"
 "MIME-Version: 1.0\n"
@@ -195,11 +195,11 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:45 header.php:32
+#: functions.php:50 header.php:32
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:85
 msgid "Sidebar"
 msgstr ""
 
