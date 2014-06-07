@@ -1,4 +1,4 @@
-# Copyright (C) 2014 Underscores.me
+# Copyright (C) 2014 Author Name
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -240,7 +240,7 @@ msgid "Platform"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "http://website.com"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -248,7 +248,7 @@ msgid "Description"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Underscores.me"
+msgid "Author Name"
 msgstr ""
 
 #: archive.php:33
