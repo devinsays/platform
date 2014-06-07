@@ -44,7 +44,9 @@ module.exports = function(grunt) {
 		    build: {
 		        src: [
 		            'js/skip-link-focus-fix.js',
-		            'js/navigation.js'
+		            'js/navigation.js',
+		            'js/jquery.fitvids.js',
+		            'js/global.js'
 		        ],
 		        dest: 'js/platform.min.js',
 		    }
