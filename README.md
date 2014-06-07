@@ -21,33 +21,33 @@ Let's say you'd like to change the theme name to "Megatherium".  You'll need to 
 
 Replace in "Platform" in .php and .scss files:
 
-`
+```SHELL
 find . -name '*.php' -exec sed -i "" 's/Platform/Megatherium/g' {} \;
 find . -name '*.scss' -exec sed -i "" 's/Platform/Megatherium/g' {} \;
-`
+```
 
 Replace in "platform" in .php, .js, and .json files:
 
-`
+```SHELL
 find . -name '*.php' -exec sed -i "" 's/platform/megatherium/g' {} \;
 find . -name '*.js' -exec sed -i "" 's/platform/megatherium/g' {} \;
 find . -name '*.json' -exec sed -i "" 's/platform/megatherium/g' {} \;
-`
+```
 
 Replace the constant "PLATFORM" in .php files:
 
-`
+```SHELL
 find . -name '*.php' -exec sed -i "" 's/PLATFORM/MEGATHERIUM/g' {} \;
-`
+```
 
 Now you can install all the Grunt modules:
 
-`
+```SHELL
 npm install
-`
+```
 
 And do your first build:
 
-`
+```SHELL
 grunt build
-`
+```
