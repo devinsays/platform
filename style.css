@@ -16,37 +16,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 Platform is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
+*/
+/* Reset
+-------------------------------------------------------------- */
+/*
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1.0 - Reset
-2.0 - Typography
-3.0 - Elements
-4.0 - Forms
-5.0 - Navigation
-	5.1 - Links
-	5.2 - Menus
-6.0 - Accessibility
-7.0 - Alignments
-8.0 - Clearings
-9.0 - Widgets
-10.0 - Content
-	10.1 - Posts and pages
-	10.2 - Asides
-	10.3 - Comments
-11.0 - Infinite scroll
-12.0 - Media
-	12.1 - Captions
-	12.2 - Galleries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-1.0 - Reset
---------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -139,9 +117,8 @@ a img {
   border: 0;
 }
 
-/*--------------------------------------------------------------
-2.0 Typography
---------------------------------------------------------------*/
+/* Typography
+-------------------------------------------------------------- */
 body,
 button,
 input,
@@ -229,8 +206,7 @@ big {
   font-size: 125%;
 }
 
-/*--------------------------------------------------------------
-3.0 Elements
+/* Elements
 --------------------------------------------------------------*/
 hr {
   background-color: #ccc;
@@ -285,8 +261,7 @@ th {
   font-weight: bold;
 }
 
-/*--------------------------------------------------------------
-4.0 Forms
+/* Forms
 --------------------------------------------------------------*/
 button,
 input,
@@ -407,29 +382,57 @@ textarea {
   width: 100%;
 }
 
-/*--------------------------------------------------------------
-5.0 Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-5.1 Links
---------------------------------------------------------------*/
-a {
-  color: royalblue;
+/* Theme Globals
+-------------------------------------------------------------- */
+body {
+  word-wrap: break-word;
 }
 
-a:visited {
-  color: purple;
+body,
+button,
+input,
+select,
+textarea {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5em;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4, h5, h6 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue;
+  text-decoration: underline;
 }
 
-/*--------------------------------------------------------------
-5.2 Menus
---------------------------------------------------------------*/
+/* Navigation
+-------------------------------------------------------------- */
+/* Menus */
 .main-navigation {
   clear: both;
   display: block;
@@ -517,8 +520,7 @@ a:active {
   width: 50%;
 }
 
-/*--------------------------------------------------------------
-6.0 Accessibility
+/* Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers */
 .screen-reader-text {
@@ -552,8 +554,7 @@ a:active {
   /* Above WP toolbar */
 }
 
-/*--------------------------------------------------------------
-7.0 Alignments
+/* Alignments
 --------------------------------------------------------------*/
 .alignleft {
   display: inline;
@@ -573,8 +574,7 @@ a:active {
   margin: 0 auto;
 }
 
-/*--------------------------------------------------------------
-8.0 Clearings
+/* Clearings
 --------------------------------------------------------------*/
 .clear:before,
 .clear:after,
@@ -601,8 +601,7 @@ a:active {
   clear: both;
 }
 
-/*--------------------------------------------------------------
-9.0 Widgets
+/* Widgets
 --------------------------------------------------------------*/
 .widget {
   margin: 0 0 1.5em;
@@ -618,11 +617,7 @@ a:active {
   display: none;
 }
 
-/*--------------------------------------------------------------
-10.0 Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-10.1 Posts and pages
+/* Content
 --------------------------------------------------------------*/
 .hentry {
   margin: 0 0 1.5em;
@@ -649,24 +644,22 @@ a:active {
   margin: 0 0 1.5em;
 }
 
-/*--------------------------------------------------------------
-10.2 Asides
+/* Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none;
 }
 
-/*--------------------------------------------------------------
-10.3 Comments
+/* Comments
 --------------------------------------------------------------*/
 .comment-content a {
   word-wrap: break-word;
 }
 
-/*--------------------------------------------------------------
-11.0 Infinite scroll
+/* Plugin support
 --------------------------------------------------------------*/
+/* Infinite Scroll */
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -679,8 +672,7 @@ a:active {
   display: block;
 }
 
-/*--------------------------------------------------------------
-12.0 Media
+/* Media
 --------------------------------------------------------------*/
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
@@ -698,9 +690,7 @@ object {
   max-width: 100%;
 }
 
-/*--------------------------------------------------------------
-12.1 Captions
---------------------------------------------------------------*/
+/* Captions */
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%;
@@ -719,9 +709,7 @@ object {
   margin: 0.8075em 0;
 }
 
-/*--------------------------------------------------------------
-12.2 Galleries
---------------------------------------------------------------*/
+/* Galleries */
 .gallery {
   margin-bottom: 1.5em;
 }
