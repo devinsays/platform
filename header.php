@@ -38,5 +38,5 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content clear">
 		<div class="col-width">
