@@ -64,6 +64,11 @@ a:focus,
 a:active {
 	text-decoration: underline;
 }
+.col-width {
+	max-width:1040px;
+	margin:0 auto;
+	padding: 0 20px;
+}
 
 /* Navigation
 -------------------------------------------------------------- */

@@ -195,7 +195,7 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:50 header.php:32
+#: functions.php:50 header.php:34
 msgid "Primary Menu"
 msgstr ""
 

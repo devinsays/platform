@@ -7,15 +7,15 @@
  * @package Platform
  */
 ?>
-
+		</div><!-- .col-width -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+		<div class="col-width">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'platform' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'platform' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'platform' ), 'Platform', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+		</div><!-- .col-width -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
