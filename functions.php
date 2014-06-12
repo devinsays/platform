@@ -94,6 +94,17 @@ function platform_widgets_init() {
 add_action( 'widgets_init', 'platform_widgets_init' );
 
 /**
+ * Enqueue fonts.
+ */
+function platform_fonts() {
+
+	// Icon Font
+	wp_enqueue_style( 'platform_icons', get_template_directory_uri() . '/fonts/font-awesome.css', array(), PLATFORM_VERSION );
+
+}
+add_action( 'wp_enqueue_scripts', 'platform_fonts' );
+
+/**
  * Enqueue scripts and styles.
  */
 function platform_scripts() {
