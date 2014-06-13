@@ -428,7 +428,6 @@ a:active {
 .col-width {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* Layout
@@ -444,17 +443,24 @@ a:active {
 }
 
 .site-main {
-  margin: 0 325px 0 0;
+  margin: 0 330px 0 0;
+  padding: 30px 30px 30px 0;
+  border-right: 1px solid #eee;
 }
 
 .site-content .widget-area {
   float: right;
   overflow: hidden;
   width: 300px;
+  padding: 30px 0;
 }
 
 /* Header
 -------------------------------------------------------------- */
+#masthead {
+  border-bottom: 1px solid #eee;
+}
+
 .site-branding {
   margin-bottom: 30px;
 }
@@ -471,8 +477,6 @@ a:active {
 /* Primary Navigation
 -------------------------------------------------------------- */
 .main-navigation {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 30px;
   font-family: "Helvetica Nueue", sans-serif;
 }
 
@@ -627,6 +631,140 @@ a:active {
 --------------------------------------------------------------*/
 .comment-content a {
   word-wrap: break-word;
+}
+
+#comments, #respond {
+  font-family: "Helvetica Nueue", sans-serif;
+}
+
+.comment-list {
+  margin: 0 0 30px 0;
+  list-style: none;
+}
+
+.comment-list .children {
+  list-style: none;
+}
+
+.comments-title {
+  margin: 0 0 15px;
+}
+
+.comment {
+  position: relative;
+  margin: 0 0 0 80px;
+}
+
+.comment-body {
+  padding: 20px;
+  background: #fbfbfb;
+  border-radius: 3px;
+  margin: 0 0 20px 0;
+}
+
+.bypostauthor .comment-body {
+  background: #f0fafa;
+}
+
+.comment-body:before {
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  margin-top: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fbfbfb;
+  content: "";
+}
+
+.comment-author .avatar {
+  position: absolute;
+  top: 0px;
+  left: -80px;
+  border-radius: 100%;
+}
+
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.comment-meta {
+  padding-right: 80px;
+}
+
+.comment-metadata {
+  margin-bottom: 15px;
+}
+
+.comment-list .children .children {
+  margin: 0;
+}
+
+.comment-list .children .children .comment {
+  margin: 0;
+}
+
+.comment-list .children .children .comment-body:before {
+  content: none;
+}
+
+.comment-list .children .children .comment-author .avatar {
+  left: auto;
+  right: 15px;
+  top: 20px;
+  z-index: 10;
+  max-width: 40px;
+}
+
+#respond p {
+  margin-bottom: 15px;
+}
+
+#respond label {
+  display: none;
+  /* Using placeholders instead */
+}
+
+#author, #email, #url {
+  width: 50%;
+}
+
+#reply-title {
+  padding: 15px 0;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+
+#respond textarea {
+  display: block;
+  margin: 1em 0;
+  width: 80%;
+}
+
+#respond .placeholder {
+  color: #aaa;
+}
+
+/* These are not displayed by default */
+#respond .form-allowed-tags {
+  display: none;
+  clear: both;
+  width: 80%;
+}
+
+#respond .form-allowed-tags {
+  margin-bottom: 1.5em;
+}
+
+#respond .form-allowed-tags code {
+  font-size: 12px;
+}
+
+/* Colophon
+--------------------------------------------------------------*/
+#colophon {
+  padding-top: 30px;
+  border-top: 1px solid #eee;
 }
 
 /* Plugin support
