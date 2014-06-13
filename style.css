@@ -117,24 +117,12 @@ a img {
 
 /* Typography
 -------------------------------------------------------------- */
-body,
-button,
-input,
-select,
-textarea {
-  color: #404040;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 15px;
 }
 
 b, strong {
@@ -146,27 +134,27 @@ dfn, cite, em, i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  margin: 0 15px;
 }
 
 address {
-  margin: 0 0 1.5em;
+  margin: 0 0 15px;
 }
 
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
+  padding: 15px;
 }
 
 code, kbd, tt, var {
-  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font: 14px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
 abbr, acronym {
@@ -210,11 +198,11 @@ hr {
   background-color: #ccc;
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em;
+  margin-bottom: 15px;
 }
 
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 15px 30px;
 }
 
 ul {
@@ -228,7 +216,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em;
+  margin-left: 15px;
 }
 
 dt {
@@ -236,7 +224,7 @@ dt {
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 15px 15px;
 }
 
 img {
@@ -251,7 +239,7 @@ figure {
 }
 
 table {
-  margin: 0 0 1.5em;
+  margin: 0 0 15px;
   width: 100%;
 }
 
@@ -277,41 +265,14 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: #fff;
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
   -webkit-appearance: button;
   /* Corrects inability to style clickable 'input' types in iOS */
-  font-size: 12px;
-  font-size: 1.2rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-  border-color: #aaa #bbb #bbb;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 6px 10px 4px;
 }
 
 input[type="checkbox"],
@@ -344,8 +305,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 3px;
 }
 
@@ -457,12 +417,9 @@ a:active {
 
 /* Header
 -------------------------------------------------------------- */
-#masthead {
-  border-bottom: 1px solid #eee;
-}
-
 .site-branding {
-  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
 }
 
 .site-title {
@@ -470,21 +427,113 @@ a:active {
 }
 
 .site-description {
-  font-size: 16px;
+  font-size: 17px;
   margin: 0;
 }
 
 /* Primary Navigation
 -------------------------------------------------------------- */
 .main-navigation {
+  border-bottom: 1px solid #eee;
   font-family: "Helvetica Nueue", sans-serif;
 }
 
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a:hover {
+  opacity: .6;
+}
+
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+  font-weight: 600;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+}
+
+/* Larger Screen Sizes */
+@media screen and (min-width: 680px) {
+  .main-navigation a {
+    padding: 15px;
+    border: none;
+    display: inline-block;
+  }
+
+  .main-navigation li {
+    position: relative;
+    display: inline;
+  }
+
+  .main-navigation ul {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+  }
+
+  .main-navigation ul ul {
+    display: none;
+    width: 220px;
+    background: #fff;
+    border: 1px solid #eee;
+    left: 50%;
+    margin-left: -110px;
+    position: absolute;
+    top: 30px;
+    z-index: 99999;
+    border-radius: 5px;
+  }
+
+  .main-navigation ul ul:before {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #eee;
+    content: "";
+  }
+
+  .main-navigation ul ul li {
+    display: block;
+    margin: 0;
+  }
+
+  .main-navigation ul ul a {
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+
+  .main-navigation ul ul a:hover {
+    opacity: 1;
+    background: #f6f6f6;
+  }
+
+  .main-navigation ul ul li:last-child a {
+    border-bottom: none;
+  }
+
+  .main-navigation ul li:hover > ul {
+    display: block;
+  }
+}
 /* Paging Navigation
 --------------------------------------------------------------*/
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
+  font-family: "Helvetica Nueue", sans-serif;
   margin: 0 0 1.5em;
   overflow: hidden;
 }
@@ -585,6 +634,11 @@ a:active {
   display: none;
 }
 
+.widget > ul {
+  list-style: none;
+  margin-left: 0;
+}
+
 /* Content
 --------------------------------------------------------------*/
 .hentry {
@@ -631,10 +685,6 @@ a:active {
 --------------------------------------------------------------*/
 .comment-content a {
   word-wrap: break-word;
-}
-
-#comments, #respond {
-  font-family: "Helvetica Nueue", sans-serif;
 }
 
 .comment-list {
@@ -730,14 +780,13 @@ a:active {
 }
 
 #reply-title {
-  padding: 15px 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 15px;
   position: relative;
 }
 
 #respond textarea {
   display: block;
-  margin: 1em 0;
+  margin: 10px 0;
   width: 80%;
 }
 

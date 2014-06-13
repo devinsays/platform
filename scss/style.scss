@@ -101,16 +101,16 @@ a:active {
 -------------------------------------------------------------- */
 
 #masthead {
-	border-bottom: 1px solid #eee;
 }
 .site-branding {
-	margin-bottom:30px;
+	border-bottom: 1px solid #eee;
+	padding-bottom:30px;
 }
 .site-title {
 	margin: 0;
 }
 .site-description {
-	font-size:16px;
+	font-size:17px;
 	margin:0;
 }
 
@@ -118,8 +118,89 @@ a:active {
 -------------------------------------------------------------- */
 
 .main-navigation {
+	border-bottom: 1px solid #eee;
 	font-family: $font-2;
 }
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+.main-navigation a:hover {
+	opacity:.6;
+}
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+	font-weight:600;
+}
+.menu-toggle {
+	cursor: pointer;
+	display: none;
+}
+
+/* Larger Screen Sizes */
+@media screen and ( min-width: 680px ) {
+
+	.main-navigation a {
+		padding:15px;
+		border:none;
+		display: inline-block;
+	}
+	.main-navigation li {
+		position: relative;
+		display: inline;
+	}
+	.main-navigation ul {
+		-webkit-transition: all 0.2s ease;
+		-moz-transition: all 0.2s ease;
+	}
+	.main-navigation ul ul {
+		display: none;
+		width:220px;
+		background:#fff;
+		border: 1px solid #eee;
+		left: 50%;
+		margin-left: -110px;
+		position: absolute;
+		top: 30px;
+		z-index: 99999;
+		border-radius:5px;
+	}
+	.main-navigation ul ul:before {
+		position: absolute;
+		top: -8px;
+		left: 50%;
+		margin-left: -8px;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid #eee;
+		content: "";
+	}
+	.main-navigation ul ul li {
+		display: block;
+		margin:0;
+	}
+	.main-navigation ul ul a {
+		display: block;
+		border-bottom:1px solid #eee;
+	}
+	.main-navigation ul ul a:hover {
+		opacity: 1;
+		background:#f6f6f6;
+	}
+	.main-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+	.main-navigation ul li:hover > ul {
+		display: block;
+	}
+
+}
+
 
 /* Paging Navigation
 --------------------------------------------------------------*/
@@ -127,6 +208,7 @@ a:active {
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
+	font-family: $font-2;
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
@@ -225,7 +307,9 @@ a:active {
 .widget_search .search-submit {
 	display: none;
 }
-.widget h3 {
+.widget > ul {
+	list-style: none;
+	margin-left:0;
 }
 
 /* Content
@@ -275,9 +359,6 @@ a:active {
 	word-wrap: break-word;
 }
 .bypostauthor {
-}
-#comments, #respond {
-	font-family: $font-2;
 }
 .comment-list {
 	margin:0 0 30px 0;
@@ -353,13 +434,12 @@ a:active {
 	width: 50%;
 }
 #reply-title {
-	padding:15px 0;
-	margin-bottom:1.5em;
+	margin-bottom:15px;
 	position: relative;
 }
 #respond textarea {
   display: block;
-  margin: 1em 0;
+  margin: 10px 0;
   width: 80%;
 }
 #respond .placeholder {
