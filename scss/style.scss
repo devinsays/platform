@@ -35,15 +35,16 @@ button,
 input,
 select,
 textarea {
-	color: #333;
-	font-size: 16px;
-	line-height: 1.6;
+	color: #555;
+	font-size: 17px;
+	line-height: 1.5;
 }
 body {
 	font-family: $font-1;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-2;
+	font-weight:300;
 	margin-bottom: 10px;
 }
 h1 {
@@ -114,6 +115,7 @@ a:active {
 .main-navigation {
 	border-bottom: 1px solid #ddd;
 	margin-bottom:30px;
+	font-family: $font-2;
 }
 
 /* Paging Navigation
@@ -220,6 +222,8 @@ a:active {
 .widget_search .search-submit {
 	display: none;
 }
+.widget h3 {
+}
 
 /* Content
 --------------------------------------------------------------*/
@@ -228,6 +232,9 @@ a:active {
 }
 .hentry {
 	margin: 0 0 1.5em;
+}
+.entry-header {
+	font-family: $font-2;
 }
 .byline,
 .updated {
@@ -245,6 +252,9 @@ a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+.entry-footer {
+	font-family: $font-2;
 }
 
 /* Asides

@@ -58,8 +58,6 @@ html {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -283,7 +281,6 @@ input[type="submit"] {
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
   background: #e6e6e6;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
@@ -302,7 +299,6 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   border-color: #ccc #bbb #aaa;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
@@ -315,7 +311,6 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   border-color: #aaa #bbb #bbb;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -328,8 +323,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* Addresses appearance set to searchfield in S5, Chrome */
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -389,17 +382,18 @@ button,
 input,
 select,
 textarea {
-  color: #333;
-  font-size: 16px;
-  line-height: 1.6;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Georgia", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
+  font-family: "Helvetica Nueue", sans-serif;
+  font-weight: 300;
   margin-bottom: 10px;
 }
 
@@ -422,7 +416,6 @@ h4, h5, h6 {
 a {
   color: #117bb8;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -480,6 +473,7 @@ a:active {
 .main-navigation {
   border-bottom: 1px solid #ddd;
   margin-bottom: 30px;
+  font-family: "Helvetica Nueue", sans-serif;
 }
 
 /* Paging Navigation
@@ -522,7 +516,6 @@ a:active {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
@@ -594,6 +587,10 @@ a:active {
   margin: 0 0 1.5em;
 }
 
+.entry-header {
+  font-family: "Helvetica Nueue", sans-serif;
+}
+
 .byline,
 .updated {
   display: none;
@@ -613,6 +610,10 @@ a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.entry-footer {
+  font-family: "Helvetica Nueue", sans-serif;
 }
 
 /* Asides
