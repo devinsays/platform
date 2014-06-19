@@ -251,6 +251,12 @@ th {
 
 /* Forms
 --------------------------------------------------------------*/
+label {
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+}
+
 button,
 input,
 select,
@@ -264,17 +270,49 @@ textarea {
 }
 
 button,
+.button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  background: #fff;
-  color: rgba(0, 0, 0, 0.8);
+  border-style: solid;
+  border-width: 0px;
   cursor: pointer;
-  /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  -webkit-appearance: button;
-  /* Corrects inability to style clickable 'input' types in iOS */
-  padding: 6px 10px 4px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 10px;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #2ba6cb;
+  color: #fff;
+  -webkit-transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
+  font-size: 15px;
+}
+
+button:hover,
+.button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #2284a1;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;
+  border-color: #999;
+  outline: none;
 }
 
 input[type="checkbox"],
@@ -283,12 +321,47 @@ input[type="radio"] {
   /* Addresses excess padding in IE8/9 */
 }
 
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* Addresses appearance set to searchfield in S5, Chrome */
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 */
+  border: 0;
+  padding: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  background-color: #FFF;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: 15px;
+  margin: 0 0 15px 0;
+  padding: 8px;
+  width: 100%;
+  -webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;
+  border-color: #999;
+  outline: none;
 }
 
 input[type="search"]::-webkit-search-decoration {
@@ -296,64 +369,23 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-  border: 0;
-  padding: 0;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-  border: 1px solid #ddd;
-  border-radius: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-  color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-  padding: 3px;
-}
-
 textarea {
   overflow: auto;
   /* Removes default vertical scrollbar in IE6/7/8/9 */
-  padding-left: 3px;
   vertical-align: top;
   /* Improves readability and alignment in all browsers */
-  width: 100%;
+  height: auto;
+  min-height: 50px;
 }
 
 /* Theme Globals
 -------------------------------------------------------------- */
-body,
-button,
-input,
-select,
-textarea {
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 17px;
   line-height: 1.5;
-}
-
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -379,7 +411,7 @@ h4, h5, h6 {
 }
 
 a {
-  color: #117bb8;
+  color: #2ba6cb;
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -392,6 +424,7 @@ a:active {
 }
 
 .col-width {
+  width: 96%;
   max-width: 1040px;
   margin: 0 auto;
 }
@@ -407,7 +440,6 @@ a:active {
 .site-main {
   margin: 0 330px 0 0;
   padding: 30px 30px 30px 0;
-  border-right: 1px solid #eee;
 }
 
 .site-content .widget-area {
@@ -420,28 +452,38 @@ a:active {
 /* Header
 -------------------------------------------------------------- */
 .site-branding {
-  border-bottom: 1px solid #eee;
+  background: #2ba6cb;
+  font-weight: 500;
   padding: 30px 0;
+  color: #fff;
 }
 
 .site-title {
+  font-size: 44px;
   margin: 0;
 }
 
+.site-title a {
+  color: #fff;
+}
+
 .site-description {
-  font-size: 17px;
+  font-size: 22px;
   margin: 0;
 }
 
 /* Primary Navigation
 -------------------------------------------------------------- */
 .primary-navigation {
-  border-bottom: 1px solid #eee;
+  background: #111;
+  font-size: 13px;
 }
 
 .primary-navigation a {
   display: block;
   text-decoration: none;
+  color: #fff;
+  font-weight: 600;
 }
 
 .primary-navigation ul {
@@ -482,6 +524,11 @@ a:active {
     display: inline-block;
   }
 
+  .primary-navigation a:hover, .primary-navigation li:hover a {
+    background: #333;
+    opacity: 1;
+  }
+
   .primary-navigation .menu-item-has-children > a {
     padding-right: 30px;
   }
@@ -491,10 +538,9 @@ a:active {
     font-size: 14px;
     line-height: 1;
     content: '\f0d7';
-    color: #ccc;
     position: absolute;
     right: 15px;
-    top: 3px;
+    top: 2px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -502,10 +548,9 @@ a:active {
   .primary-navigation ul ul {
     display: none;
     width: 220px;
-    background: #fff;
-    border: 1px solid #eee;
+    background: #333;
     position: absolute;
-    top: 38px;
+    top: 32px;
     z-index: 99999;
   }
 
@@ -520,12 +565,11 @@ a:active {
 
   .primary-navigation ul ul a {
     display: block;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #222;
   }
 
   .primary-navigation ul ul a:hover {
-    opacity: 1;
-    background: #f6f6f6;
+    color: #2ba6cb;
   }
 
   .primary-navigation ul ul .menu-item-has-children > a:after {
@@ -541,8 +585,9 @@ a:active {
   }
 
   .primary-navigation ul ul ul {
+    border-left: 1px solid #222;
     right: -220px;
-    top: -1px;
+    top: 0;
   }
 }
 /* Paging Navigation
@@ -638,7 +683,9 @@ a:active {
 /* Widgets
 --------------------------------------------------------------*/
 .widget {
+  background: #fafafa;
   margin: 0 0 1.5em;
+  padding: 20px;
 }
 
 /* Make sure select elements fit in widgets */
@@ -795,7 +842,6 @@ a:active {
 
 #respond textarea {
   display: block;
-  margin: 10px 0;
   width: 80%;
 }
 
@@ -821,8 +867,14 @@ a:active {
 /* Colophon
 --------------------------------------------------------------*/
 #colophon {
-  padding-top: 30px;
-  border-top: 1px solid #eee;
+  font-size: 14px;
+  padding: 20px 0;
+  background: #333;
+  color: #666666;
+}
+
+#colophon a {
+  color: #999999;
 }
 
 /* Plugin support
