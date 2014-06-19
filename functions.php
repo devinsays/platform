@@ -43,11 +43,16 @@ function platform_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// Registers menu below the site title
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'platform' ),
+	) );
+
+	// Registers menu for use in the footer
+	register_nav_menus( array(
+		'footer' => __( 'Footer Menu', 'platform' ),
 	) );
 
 	/*
@@ -81,6 +86,7 @@ add_action( 'after_setup_theme', 'platform_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function platform_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'platform' ),
 		'id'            => 'sidebar-1',
@@ -90,6 +96,7 @@ function platform_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
 }
 add_action( 'widgets_init', 'platform_widgets_init' );
 

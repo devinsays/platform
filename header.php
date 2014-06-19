@@ -24,20 +24,19 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-			<div class="site-branding">
-				<div class="col-width">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				</div>
+		<nav class="primary-navigation" role="navigation">
+			<div class="col-width">
+				<button class="menu-toggle"><?php _e( 'Primary Menu', 'platform' ); ?></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</div>
+		</nav>
 
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="col-width">
-					<button class="menu-toggle"><?php _e( 'Primary Menu', 'platform' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				</div>
-			</nav><!-- #site-navigation -->
+		<div class="site-branding">
+			<div class="col-width">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div>
+		</div>
 
 	</header><!-- #masthead -->
 
