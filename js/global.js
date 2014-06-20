@@ -28,7 +28,25 @@
 			this.cache.$document.on( 'ready', function() {
 				self.fitVidsInit();
 			} );
+
+			this.cache.$window.on( 'resize', self.debounce(
+				function() {
+
+					// Remove any inline styles that may have been added to menu
+					self.cache.$menu.attr('style','');
+					self.cache.$menu.find('.children,.sub-menu').each( function(){
+		    			$(this).attr('style','');
+					});
+
+					self.cache.$menu.find('.dropdown-toggle').each( function(){
+						$(this).removeClass('toggled');
+					});
+
+				}, 200 )
+			);
+
 		},
+
 
 		/**
 		 * Initialize the mobile menu functionality.
@@ -52,8 +70,8 @@
 			if ( ! this.cache.$menu.hasClass('nav-menu') )
 				this.cache.$menu.addClass('nav-menu');
 
-			// Add dropdown toggle to display child menu items.
-			$('.main-navigation > div > ul > .page_item_has_children, .main-navigation > div > ul > .menu-item-has-children').append( '<span class="dropdown-toggle" />');
+			// Add dropdown toggle to display child menu items
+			$('.nav-menu > .page_item_has_children, .nav-menu > .menu-item-has-children').append( '<span class="dropdown-toggle" />');
 
 			// When mobile menu is tapped/clicked
 			this.cache.$menutoggle.on( 'click', function() {
@@ -95,6 +113,25 @@
 
 			// Run FitVids
 			$('.hentry').fitVids();
+		},
+
+		/**
+		 * Debounce function.
+		 *
+		 * @since  1.0.0
+		 * @link http://remysharp.com/2010/07/21/throttling-function-calls
+		 *
+		 * @return void
+		 */
+		debounce: function(fn, delay) {
+			var timer = null;
+			return function () {
+				var context = this, args = arguments;
+				clearTimeout(timer);
+				timer = setTimeout(function () {
+					fn.apply(context, args);
+				}, delay);
+			};
 		}
 
 

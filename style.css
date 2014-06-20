@@ -493,13 +493,19 @@ a:active {
 }
 
 .primary-navigation ul {
+  display: none;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
-  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-navigation li {
+  position: relative;
 }
 
 .primary-navigation a {
-  position: relative;
   padding: 15px 2%;
   display: block;
   text-decoration: none;
@@ -512,23 +518,28 @@ a:active {
   padding-right: 30px;
 }
 
-.primary-navigation .menu-item-has-children > a:after {
+.dropdown-toggle {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 49px;
+  width: 40px;
+  background: #333;
+  cursor: pointer;
+}
+
+.dropdown-toggle:after {
   font-family: 'FontAwesome';
+  color: #fff;
   font-size: 14px;
   line-height: 1;
   content: '\f0d7';
   position: absolute;
   right: 15px;
-  top: 50%;
-  margin-top: -7px;
+  top: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.primary-navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .menu-toggle {
@@ -562,28 +573,50 @@ a:active {
   border: none;
 }
 
+.primary-navigation ul ul a {
+  padding-left: 40px;
+}
+
 /* Small Screen Sizes */
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1039px) {
   .primary-navigation .col-width {
     width: 100%;
   }
+
+  .dropdown-toggle.toggled:after {
+    content: '\f0d8';
+  }
 }
 /* Large Screen Sizes */
-@media screen and (min-width: 1680px) {
+@media screen and (min-width: 1040px) {
   .menu-toggle {
     display: none;
   }
 
+  .primary-navigation ul {
+    display: block;
+  }
+
+  .primary-navigation li {
+    display: inline;
+  }
+
   .primary-navigation a {
     display: inline-block;
+    border: none;
+    padding: 15px 20px;
   }
 
   .primary-navigation a:hover, .primary-navigation li:hover a {
     background: #333;
   }
 
-  .primary-navigation .menu-item-has-children > a:after {
-    top: 2px;
+  .dropdown-toggle {
+    background: none;
+  }
+
+  .dropdown-toggle:after {
+    top: 0px;
   }
 
   .primary-navigation ul ul {
@@ -607,6 +640,7 @@ a:active {
   .primary-navigation ul ul a {
     display: block;
     border-top: 1px solid #222;
+    padding: 15px 20px;
   }
 
   .primary-navigation ul ul a:hover {
@@ -614,6 +648,8 @@ a:active {
   }
 
   .primary-navigation ul ul .menu-item-has-children > a:after {
+    position: absolute;
+    font-family: "FontAwesome";
     line-height: 1;
     content: '\f0da';
     right: 15px;
