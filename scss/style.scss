@@ -31,14 +31,14 @@ Platform is based on Underscores http://underscores.me/, (C) 2012-2014 Automatti
 -------------------------------------------------------------- */
 
 body {
-	font-family: $font-1;
+	font-family: $primary-font;
 	color: #333;
-	font-size: 17px;
+	font-size: $primary-font-size;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-1;
+	font-family: $primary-font;
 	font-weight:300;
 	margin-bottom: 15px;
 }
@@ -55,7 +55,7 @@ h4, h5, h6 {
 	font-size: 18px;
 }
 a {
-	color: $highlight;
+	color: $primary-color;
 	text-decoration: none;
 	transition: all 0.2s ease;
 }
@@ -93,7 +93,7 @@ a:active {
 -------------------------------------------------------------- */
 
 .site-branding {
-	background: $highlight;
+	background: $primary-color;
 	font-weight:500;
 	padding:30px 0;
 	color:#fff;
@@ -115,64 +115,89 @@ a:active {
 
 .primary-navigation {
 	background:#111;
-	font-size:13px;
+	font-size: 13px;
+}
+.primary-navigation ul {
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	display: none;
 }
 .primary-navigation a {
+	position: relative;
+	padding:15px 2%;
 	display: block;
 	text-decoration: none;
 	color:#fff;
 	font-weight:600;
+	border-bottom: 1px solid #222;
+}
+.primary-navigation .menu-item-has-children > a {
+	padding-right:30px;
+}
+.primary-navigation .menu-item-has-children > a:after {
+	font-family: 'FontAwesome';
+	font-size:14px;
+	line-height: 1;
+	content: '\f0d7';
+	position: absolute;
+	right: 15px;
+	top:50%;
+	margin-top:-7px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 .primary-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding:0;
 }
-.primary-navigation a:hover {
-	opacity:.6;
-}
-.primary-navigation .current_page_item a,
-.primary-navigation .current-menu-item a {
-	font-weight:600;
-}
 .menu-toggle {
+	background:none;
+	line-height: 1;
 	cursor: pointer;
-	display: none;
+	margin:0;
+	padding:0 0 0 6%;
+	min-height: 50px;
+	width:100%;
+	text-align: left;
+}
+.menu-toggle:hover {
+	background:none;
+}
+.menu-toggle:before {
+    font-family: "FontAwesome";
+    content: '\f0c9';
+    speak: none;
+    display: inline-block;
+    font-weight: normal;
+    position: absolute;
+    left:2%;
+}
+.menu-toggle:focus {
+	box-shadow: none;
+	border:none;
 }
 
-/* Larger Screen Sizes */
-@media screen and ( min-width: 680px ) {
-
-	.primary-navigation ul {
-		-webkit-transition: all 0.2s ease;
-		-moz-transition: all 0.2s ease;
+/* Small Screen Sizes */
+@media screen and ( max-width: 1680px ) {
+	.primary-navigation .col-width {
+		width:100%;
 	}
-	.primary-navigation li {
-		position: relative;
-		display: inline;
+}
+
+/* Large Screen Sizes */
+@media screen and ( min-width: 1680px ) {
+	.menu-toggle {
+		display: none;
 	}
 	.primary-navigation a {
-		padding:15px;
-		border:none;
 		display: inline-block;
 	}
 	.primary-navigation a:hover, .primary-navigation li:hover a {
 		background:#333;
-		opacity:1;
-	}
-	.primary-navigation .menu-item-has-children > a {
-		padding-right:30px;
 	}
 	.primary-navigation .menu-item-has-children > a:after {
-		font-family: 'FontAwesome';
-		font-size:14px;
-		line-height: 1;
-		content: '\f0d7';
-		position: absolute;
-		right: 15px;
 		top:2px;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	}
 	.primary-navigation ul ul {
 		display: none;
@@ -194,7 +219,7 @@ a:active {
 		border-top:1px solid #222;
 	}
 	.primary-navigation ul ul a:hover {
-		color: $highlight;
+		color: $primary-color;
 	}
 	.primary-navigation ul ul .menu-item-has-children > a:after {
 		line-height: 1;
@@ -220,7 +245,7 @@ a:active {
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 15px;
 	overflow: hidden;
 }
 .comment-navigation .nav-previous,
@@ -276,12 +301,12 @@ a:active {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: 15px;
 }
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: 15px;
 }
 .aligncenter {
 	clear: both;
@@ -306,7 +331,7 @@ a:active {
 
 .widget {
 	background: #fafafa;
-	margin: 0 0 1.5em;
+	margin: 0 0 15px;
 	padding:20px;
 }
 
@@ -330,7 +355,15 @@ a:active {
 .sticky {
 }
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
+	padding: 0 0 30px;
+	border-bottom: 1px solid #ddd;
+}
+.entry-header, .entry-content {
+	margin: 0 0 20px;
+}
+.entry-title {
+	margin: 0;
 }
 .byline,
 .updated {
@@ -340,22 +373,12 @@ a:active {
 .group-blog .byline {
 	display: inline;
 }
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+.entry-meta, .entry-footer{
+	font-size: $secondary-font-size;
 }
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/* Asides
---------------------------------------------------------------*/
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+	margin: 0 0 20px;
 }
 
 /* Comments
@@ -457,7 +480,7 @@ a:active {
 	width: 80%;
 }
 #respond .form-allowed-tags {
-	margin-bottom: 1.5em;
+	margin-bottom: 15px;
 }
 #respond .form-allowed-tags code {
 	font-size: 12px;
@@ -468,7 +491,7 @@ a:active {
 --------------------------------------------------------------*/
 
 #colophon {
-	font-size:14px;
+	font-size: $secondary-font-size;
 	padding:20px 0;
 	background:#333;
 	color: #666
@@ -514,7 +537,7 @@ object {
 /* Captions */
 
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 15px;
 	max-width: 100%;
 }
 .wp-caption img[class*="wp-image-"] {
@@ -525,13 +548,14 @@ object {
 	text-align: center;
 }
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	font-size: $secondary-font-size;
+	margin: 5px 0;
 }
 
 /* Galleries */
 
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 15px;
 }
 .gallery-item {
 	display: inline-block;

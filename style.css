@@ -144,7 +144,7 @@ address {
 }
 
 pre {
-  background: #eee;
+  background: #fafafa;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 14px;
   font-size: 1.4rem;
@@ -204,7 +204,8 @@ hr {
 }
 
 ul, ol {
-  margin: 0 0 15px 30px;
+  list-style-position: outside;
+  margin: 0 0 15px 20px;
 }
 
 ul {
@@ -243,10 +244,23 @@ figure {
 table {
   margin: 0 0 15px;
   width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-width: 1px 0 0 1px;
+  text-align: left;
 }
 
 th {
-  font-weight: bold;
+  font-weight: 500;
+}
+
+thead th {
+  background: #fafafa;
+}
+
+th, td {
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-width: 0 1px 1px 0;
 }
 
 /* Forms
@@ -277,7 +291,6 @@ input[type="submit"] {
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 10px;
   position: relative;
   text-decoration: none;
@@ -479,11 +492,37 @@ a:active {
   font-size: 13px;
 }
 
+.primary-navigation ul {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  display: none;
+}
+
 .primary-navigation a {
+  position: relative;
+  padding: 15px 2%;
   display: block;
   text-decoration: none;
   color: #fff;
   font-weight: 600;
+  border-bottom: 1px solid #222;
+}
+
+.primary-navigation .menu-item-has-children > a {
+  padding-right: 30px;
+}
+
+.primary-navigation .menu-item-has-children > a:after {
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  line-height: 1;
+  content: '\f0d7';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -7px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .primary-navigation ul {
@@ -492,57 +531,59 @@ a:active {
   padding: 0;
 }
 
-.primary-navigation a:hover {
-  opacity: .6;
-}
-
-.primary-navigation .current_page_item a,
-.primary-navigation .current-menu-item a {
-  font-weight: 600;
-}
-
 .menu-toggle {
+  background: none;
+  line-height: 1;
   cursor: pointer;
-  display: none;
+  margin: 0;
+  padding: 0 0 0 6%;
+  min-height: 50px;
+  width: 100%;
+  text-align: left;
 }
 
-/* Larger Screen Sizes */
-@media screen and (min-width: 680px) {
-  .primary-navigation ul {
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-  }
+.menu-toggle:hover {
+  background: none;
+}
 
-  .primary-navigation li {
-    position: relative;
-    display: inline;
+.menu-toggle:before {
+  font-family: "FontAwesome";
+  content: '\f0c9';
+  speak: none;
+  display: inline-block;
+  font-weight: normal;
+  position: absolute;
+  left: 2%;
+}
+
+.menu-toggle:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Small Screen Sizes */
+@media screen and (max-width: 1680px) {
+  .primary-navigation .col-width {
+    width: 100%;
+  }
+}
+/* Large Screen Sizes */
+@media screen and (min-width: 1680px) {
+  .menu-toggle {
+    display: none;
   }
 
   .primary-navigation a {
-    padding: 15px;
-    border: none;
     display: inline-block;
   }
 
   .primary-navigation a:hover, .primary-navigation li:hover a {
     background: #333;
-    opacity: 1;
-  }
-
-  .primary-navigation .menu-item-has-children > a {
-    padding-right: 30px;
   }
 
   .primary-navigation .menu-item-has-children > a:after {
-    font-family: 'FontAwesome';
-    font-size: 14px;
-    line-height: 1;
-    content: '\f0d7';
-    position: absolute;
-    right: 15px;
     top: 2px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   .primary-navigation ul ul {
@@ -595,7 +636,7 @@ a:active {
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-  margin: 0 0 1.5em;
+  margin: 0 0 15px;
   overflow: hidden;
 }
 
@@ -653,13 +694,13 @@ a:active {
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 1.5em;
+  margin-right: 15px;
 }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 1.5em;
+  margin-left: 15px;
 }
 
 .aligncenter {
@@ -684,7 +725,7 @@ a:active {
 --------------------------------------------------------------*/
 .widget {
   background: #fafafa;
-  margin: 0 0 1.5em;
+  margin: 0 0 15px;
   padding: 20px;
 }
 
@@ -706,7 +747,17 @@ a:active {
 /* Content
 --------------------------------------------------------------*/
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0 0 30px;
+  padding: 0 0 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.entry-header, .entry-content {
+  margin: 0 0 20px;
+}
+
+.entry-title {
+  margin: 0;
 }
 
 .byline,
@@ -719,22 +770,13 @@ a:active {
   display: inline;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
+.entry-meta, .entry-footer {
+  font-size: 14px;
 }
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em;
-}
-
-/* Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-  display: none;
+  margin: 0 0 20px;
 }
 
 /* Comments
@@ -857,7 +899,7 @@ a:active {
 }
 
 #respond .form-allowed-tags {
-  margin-bottom: 1.5em;
+  margin-bottom: 15px;
 }
 
 #respond .form-allowed-tags code {
@@ -912,7 +954,7 @@ object {
 
 /* Captions */
 .wp-caption {
-  margin-bottom: 1.5em;
+  margin-bottom: 15px;
   max-width: 100%;
 }
 
@@ -926,12 +968,13 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
+  font-size: 14px;
+  margin: 5px 0;
 }
 
 /* Galleries */
 .gallery {
-  margin-bottom: 1.5em;
+  margin-bottom: 15px;
 }
 
 .gallery-item {

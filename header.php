@@ -26,7 +26,7 @@
 
 		<nav class="primary-navigation" role="navigation">
 			<div class="col-width">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'platform' ); ?></button>
+				<button class="menu-toggle"><?php _e( 'Menu', 'platform' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</div>
 		</nav>

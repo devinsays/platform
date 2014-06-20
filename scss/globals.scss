@@ -20,7 +20,7 @@ address {
 	margin: 0 0 15px;
 }
 pre {
-	background: #eee;
+	background: $secondary-color;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -72,7 +72,8 @@ hr {
 	margin-bottom: 15px;
 }
 ul, ol {
-	margin: 0 0 15px 30px;
+	list-style-position: outside;
+	margin: 0 0 15px 20px;
 }
 ul {
 	list-style: disc;
@@ -101,9 +102,20 @@ figure {
 table {
 	margin: 0 0 15px;
 	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-width: 1px 0 0 1px;
+	text-align: left;
 }
 th {
-	font-weight: bold;
+	font-weight: 500;
+}
+thead th {
+	background: #fafafa;
+}
+th, td {
+	padding: 5px 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-width: 0 1px 1px 0;
 }
 
 /* Forms
@@ -130,7 +142,6 @@ input[type="submit"] {
 	border-style: solid;
 	border-width: 0px;
 	cursor: pointer;
-	font-family: $font-1;
 	margin: 0 0 10px;
 	position: relative;
 	text-decoration: none;
@@ -139,7 +150,7 @@ input[type="submit"] {
 	-webkit-border-radius: 0;
 	display: inline-block;
 	padding: 8px 20px;
-	background-color: $highlight;
+	background-color: $primary-color;
 	color: #fff;
 	transition: background-color 200ms ease-out;
 	font-size:15px;
@@ -149,7 +160,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: $highlight-hover;
+	background: $primary-hover;
 }
 button:focus,
 input[type="button"]:focus,

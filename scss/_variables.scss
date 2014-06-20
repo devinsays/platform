@@ -1,8 +1,14 @@
 // Colors
 
-$highlight : #2BA6CB;
-$highlight-hover : darken( $highlight, 10% );
+$primary-color : #2ba6cb;
+$primary-hover : darken( $primary-color, 10% );
+$secondary-color : #fafafa;
 
-// Font families
+// Font Families
 
-$font-1 : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$primary-font : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Font Sizing
+
+$primary-font-size: 17px;
+$secondary-font-size: 14px;
