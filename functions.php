@@ -134,6 +134,14 @@ function platform_scripts() {
 		);
 
 		wp_enqueue_script(
+			'platform-fast-click',
+			get_template_directory_uri() . '/js/jquery.fastclick.js',
+			array(),
+			PLATFORM_VERSION,
+			true
+		);
+
+		wp_enqueue_script(
 			'platform-fitvids',
 			get_template_directory_uri() . '/js/jquery.fitvids.js',
 			array( 'jquery' ),

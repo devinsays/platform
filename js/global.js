@@ -74,7 +74,7 @@
 			$('.nav-menu > .page_item_has_children, .nav-menu > .menu-item-has-children').append( '<span class="dropdown-toggle" />');
 
 			// When mobile menu is tapped/clicked
-			this.cache.$menutoggle.on( 'click', function() {
+			this.cache.$menutoggle.fastClick( function() {
 				if ( ! self.cache.$primarynavigation.hasClass('toggled') ) {
 					self.cache.$menu.slideDown( '400', function() {
 						self.cache.$primarynavigation.addClass('toggled');
@@ -87,7 +87,7 @@
 			});
 
 			// When mobile submenu is tapped/clicked
-			$('.dropdown-toggle').click( function() {
+			$('.dropdown-toggle').fastClick( function() {
 				var $submenu = $(this).parent().find('.children,.sub-menu'),
 					$toggle = $(this);
 				if ( ! $(this).hasClass('toggled') ) {
@@ -133,7 +133,6 @@
 				}, delay);
 			};
 		}
-
 
  	};
  	platform.init();
