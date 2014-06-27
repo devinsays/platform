@@ -75,13 +75,13 @@
 
 			// When mobile menu is tapped/clicked
 			this.cache.$menutoggle.fastClick( function() {
-				if ( ! self.cache.$primarynavigation.hasClass('toggled') ) {
+				if ( ! self.cache.$menu.hasClass('toggled') ) {
 					self.cache.$menu.slideDown( '400', function() {
-						self.cache.$primarynavigation.addClass('toggled');
+						self.cache.$menu.addClass('toggled');
 					});
 				} else {
 					self.cache.$menu.slideUp( '400', function(){
-						self.cache.$primarynavigation.removeClass('toggled');
+						self.cache.$menu.removeClass('toggled');
 					});
 				}
 			});

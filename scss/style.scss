@@ -33,7 +33,7 @@ Platform is based on Underscores http://underscores.me/, (C) 2012-2014 Automatti
 body {
 	font-family: $primary-font;
 	color: #333;
-	font-size: $primary-font-size;
+	font-size: 16px;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
@@ -65,9 +65,9 @@ a:active {
 	text-decoration: underline;
 }
 .col-width {
-	width:96%;
 	max-width:1040px;
 	margin:0 auto;
+	padding:0 20px;
 }
 
 /* Layout
@@ -129,7 +129,7 @@ a:active {
 	position: relative;
 }
 .primary-navigation a {
-	padding:15px 2%;
+	padding:15px 20px;
 	display: block;
 	text-decoration: none;
 	color:#fff;
@@ -166,7 +166,7 @@ a:active {
 	line-height: 1;
 	cursor: pointer;
 	margin:0;
-	padding:0 0 0 6%;
+	padding:0 0 0 30px;
 	min-height: 50px;
 	width:100%;
 	text-align: left;
@@ -181,7 +181,7 @@ a:active {
     display: inline-block;
     font-weight: normal;
     position: absolute;
-    left:2%;
+    left:0px;
 }
 .menu-toggle:focus {
 	box-shadow: none;
@@ -404,11 +404,35 @@ a:active {
 	display: inline;
 }
 .entry-meta, .entry-footer{
-	font-size: $secondary-font-size;
+	font-size: 14px;
 }
 .page-links {
 	clear: both;
 	margin: 0 0 20px;
+}
+
+/* Blockquotes */
+
+#content blockquote {
+	font-size: 18px;
+	background: $secondary-color;
+	margin: 0 0 1.5em;
+	padding: 1.5em;
+}
+
+#content blockquote cite {
+  display: inline-block;
+  margin-top: .5em;
+  font-size: 15px;
+}
+
+#content blockquote cite:before {
+  content: '\2014';
+  margin-right: .5em;
+}
+
+#content blockquote p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* Comments
@@ -521,7 +545,7 @@ a:active {
 --------------------------------------------------------------*/
 
 #colophon {
-	font-size: $secondary-font-size;
+	font-size: 14px;
 	padding:20px 0;
 	background:#333;
 	color: #666
@@ -578,7 +602,7 @@ object {
 	text-align: center;
 }
 .wp-caption .wp-caption-text {
-	font-size: $secondary-font-size;
+	font-size: 14px;
 	margin: 5px 0;
 }
 
@@ -617,7 +641,9 @@ object {
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
-.gallery-caption {}
+.gallery-caption {
+	font-size:14px;
+}
 
 /* Responsive
 --------------------------------------------------------------*/
