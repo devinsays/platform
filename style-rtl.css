@@ -91,7 +91,7 @@ table {
 
 caption, th, td {
   font-weight: normal;
-  text-align: left;
+  text-align: right;
 }
 
 blockquote:before, blockquote:after,
@@ -204,7 +204,7 @@ hr {
 
 ul, ol {
   list-style-position: outside;
-  margin: 0 0 15px 20px;
+  margin: 0 20px 15px 0;
 }
 
 ul {
@@ -218,7 +218,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 15px;
+  margin-right: 15px;
 }
 
 dt {
@@ -244,8 +244,8 @@ table {
   margin: 0 0 15px;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-width: 1px 0 0 1px;
-  text-align: left;
+  border-width: 1px 1px 0 0;
+  text-align: right;
 }
 
 th {
@@ -259,7 +259,7 @@ thead th {
 th, td {
   padding: 5px 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-width: 0 1px 1px 0;
+  border-width: 0 0 1px 1px;
 }
 
 /* Forms
@@ -447,18 +447,18 @@ a:active {
 /* Layout
 -------------------------------------------------------------- */
 .content-area {
-  float: left;
-  margin: 0 -300px 0 0;
+  float: right;
+  margin: 0 0 0 -300px;
   width: 100%;
 }
 
 .site-main {
-  margin: 0 330px 0 0;
-  padding: 30px 30px 30px 0;
+  margin: 0 0 0 330px;
+  padding: 30px 0 30px 30px;
 }
 
 .site-content .widget-area {
-  float: right;
+  float: left;
   overflow: hidden;
   width: 300px;
   padding: 30px 0;
@@ -517,13 +517,13 @@ a:active {
 }
 
 .primary-navigation .menu-item-has-children > a {
-  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .dropdown-toggle {
   display: inline-block;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   height: 49px;
   width: 40px;
@@ -538,7 +538,7 @@ a:active {
   line-height: 1;
   content: '\f0d7';
   position: absolute;
-  right: 15px;
+  left: 15px;
   top: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -549,10 +549,10 @@ a:active {
   line-height: 1;
   cursor: pointer;
   margin: 0;
-  padding: 0 0 0 30px;
+  padding: 0 30px 0 0;
   min-height: 50px;
   width: 100%;
-  text-align: left;
+  text-align: right;
 }
 
 .menu-toggle:hover {
@@ -566,7 +566,7 @@ a:active {
   display: inline-block;
   font-weight: normal;
   position: absolute;
-  left: 0px;
+  right: 0px;
 }
 
 .menu-toggle:focus {
@@ -575,7 +575,7 @@ a:active {
 }
 
 .primary-navigation ul ul a {
-  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* Small Screen Sizes */
@@ -653,7 +653,7 @@ a:active {
     font-family: "FontAwesome";
     line-height: 1;
     content: '\f0da';
-    right: 15px;
+    left: 15px;
     top: 50%;
     margin-top: -7px;
   }
@@ -663,8 +663,8 @@ a:active {
   }
 
   .primary-navigation ul ul ul {
-    border-left: 1px solid #222;
-    right: -220px;
+    border-right: 1px solid #222;
+    left: -220px;
     top: 0;
   }
 }
@@ -680,15 +680,15 @@ a:active {
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
-  float: left;
+  float: right;
   width: 50%;
 }
 
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
-  float: right;
-  text-align: right;
+  float: left;
+  text-align: left;
   width: 50%;
 }
 
@@ -715,7 +715,7 @@ a:active {
   font-size: 14px;
   font-weight: bold;
   height: auto;
-  left: 5px;
+  right: 5px;
   line-height: normal;
   padding: 15px 23px 14px;
   text-decoration: none;
@@ -729,14 +729,14 @@ a:active {
 --------------------------------------------------------------*/
 .alignleft {
   display: inline;
-  float: left;
-  margin-right: 15px;
+  float: right;
+  margin-left: 15px;
 }
 
 .alignright {
   display: inline;
-  float: right;
-  margin-left: 15px;
+  float: left;
+  margin-right: 15px;
 }
 
 .aligncenter {
@@ -777,7 +777,7 @@ a:active {
 
 .widget > ul {
   list-style: none;
-  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Content
@@ -831,7 +831,7 @@ a:active {
 
 #content blockquote cite:before {
   content: '\2014';
-  margin-right: .5em;
+  margin-left: .5em;
 }
 
 #content blockquote p:last-of-type {
@@ -859,7 +859,7 @@ a:active {
 
 .comment {
   position: relative;
-  margin: 0 0 0 80px;
+  margin: 0 80px 0 0;
 }
 
 .comment-body {
@@ -876,18 +876,18 @@ a:active {
 .comment-body:before {
   position: absolute;
   top: 30px;
-  left: -10px;
+  right: -10px;
   margin-top: -10px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid #fbfbfb;
+  border-left: 10px solid #fbfbfb;
   content: "";
 }
 
 .comment-author .avatar {
   position: absolute;
   top: 0px;
-  left: -80px;
+  right: -80px;
   border-radius: 100%;
 }
 
@@ -896,7 +896,7 @@ a:active {
 }
 
 .comment-meta {
-  padding-right: 80px;
+  padding-left: 80px;
 }
 
 .comment-metadata {
@@ -916,8 +916,8 @@ a:active {
 }
 
 .comment-list .children .children .comment-author .avatar {
-  left: auto;
-  right: 15px;
+  right: auto;
+  left: 15px;
   top: 20px;
   z-index: 10;
   max-width: 40px;

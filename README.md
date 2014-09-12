@@ -54,3 +54,15 @@ And do your first build:
 ```SHELL
 grunt build
 ```
+
+## Versions
+
+Development
+===
+
+* RTL Support
+
+0.1.0
+===
+
+* First release

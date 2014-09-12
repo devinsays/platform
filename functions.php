@@ -123,6 +123,13 @@ function platform_scripts() {
 		PLATFORM_VERSION
 	);
 
+	// Use style-rtl.css for RTL layouts
+	wp_style_add_data(
+		'platform-style',
+		'rtl',
+		'replace'
+	);
+
 	if ( SCRIPT_DEBUG || WP_DEBUG ) :
 
 		wp_enqueue_script(

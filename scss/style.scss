@@ -27,6 +27,12 @@ Platform is based on Underscores http://underscores.me/, (C) 2012-2014 Automatti
 
 @import "globals";
 
+/* @noflip */
+body.rtl {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
 /* Theme Globals
 -------------------------------------------------------------- */
 
