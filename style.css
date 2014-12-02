@@ -299,8 +299,7 @@ input[type="submit"] {
   padding: 8px 20px;
   background-color: #2ba6cb;
   color: #fff;
-  -webkit-transition: background-color 200ms ease-out;
-          transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
   font-size: 15px;
 }
 
@@ -356,8 +355,7 @@ textarea {
   margin: 0 0 15px 0;
   padding: 8px;
   width: 100%;
-  -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-          transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
 }
 
 input[type="text"]:focus,
@@ -427,8 +425,7 @@ h4, h5, h6 {
 a {
   color: #2ba6cb;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover,
@@ -446,19 +443,46 @@ a:active {
 
 /* Layout
 -------------------------------------------------------------- */
+/* Single Column */
 .content-area {
-  float: left;
-  margin: 0 -300px 0 0;
   width: 100%;
 }
 
 .site-main {
+  padding: 30px 0 30px;
+}
+
+/* Sidebar Right */
+.layout-sidebar-right .content-area {
+  float: left;
+  margin: 0 -300px 0 0;
+}
+
+.layout-sidebar-right .site-main {
   margin: 0 330px 0 0;
   padding: 30px 30px 30px 0;
 }
 
-.site-content .widget-area {
+.layout-sidebar-right .site-content .widget-area {
   float: right;
+  overflow: hidden;
+  width: 300px;
+  padding: 30px 0;
+}
+
+/* Sidebar Left */
+.layout-sidebar-left .content-area {
+  float: right;
+  margin: 0 0 0 -300px;
+}
+
+.layout-sidebar-left .site-main {
+  margin: 0 0 0 330px;
+  padding: 30px 0 30px 30;
+}
+
+.layout-sidebar-left .site-content .widget-area {
+  float: left;
   overflow: hidden;
   width: 300px;
   padding: 30px 0;
@@ -557,8 +581,7 @@ a:active {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-          transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
 }
 
 .primary-navigation ul ul {
@@ -607,9 +630,7 @@ a:active {
   }
 
   .dropdown-toggle.toggled:after {
-    -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-            transform: rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 /* Large Screen Sizes */

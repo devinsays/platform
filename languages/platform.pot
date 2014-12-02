@@ -84,7 +84,7 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: archive.php:66 sidebar.php:16
+#: archive.php:66
 msgid "Archives"
 msgstr ""
 
@@ -191,7 +191,19 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:84
+msgid "Single Column"
+msgstr ""
+
+#: functions.php:85
+msgid "Sidebar Right"
+msgstr ""
+
+#: functions.php:86
+msgid "Sidebar Left"
+msgstr ""
+
+#: functions.php:103
 msgid "Sidebar"
 msgstr ""
 
@@ -327,16 +339,21 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
+#: inc/theme-layouts.php:459 inc/theme-layouts.php:566
+#: inc/theme-layouts.php:651
+msgid "Layout"
+msgstr ""
+
+#: inc/theme-layouts.php:684
+msgid "Global Layout"
+msgstr ""
+
 #: partials/navigation-primary.php:11
 msgid "Menu"
 msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
-
-#: sidebar.php:23
-msgid "Meta"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -405,4 +422,10 @@ msgstr ""
 #: inc/template-tags.php:87
 msgctxt "post author"
 msgid "by %s"
+msgstr ""
+
+#: inc/theme-layouts.php:364
+#. Translators: Default theme layout option.
+msgctxt "theme layout"
+msgid "Default"
 msgstr ""

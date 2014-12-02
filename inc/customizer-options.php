@@ -60,13 +60,13 @@ function platform_options() {
 
 	$sections[] = array(
 		'id' => $section,
-		'title' => __( 'Footer', 'gather' ),
+		'title' => __( 'Footer', 'platform' ),
 		'priority' => '100'
 	);
 
 	$options['footer-text'] = array(
 		'id' => 'footer-text',
-		'label'   => __( 'Footer Text', 'gather' ),
+		'label'   => __( 'Footer Text', 'platform' ),
 		'section' => $section,
 		'type'    => 'textarea',
 		'default' => platform_get_default_footer_text(),

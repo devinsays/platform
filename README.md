@@ -62,6 +62,7 @@ Development
 * Enhancement: Customizer Library
 * Enhancement: Logo option
 * Enhancement: Social Menu
+* Enhancement: Theme Layouts
 
 
 0.1.0

@@ -446,24 +446,34 @@ a:active {
 
 /* Layout
 -------------------------------------------------------------- */
+/* Single Column */
 .content-area {
-  float: right;
-  margin: 0 0 0 -300px;
   width: 100%;
 }
 
 .site-main {
+  padding: 30px 0 30px;
+}
+
+/* Sidebar Right */
+.layout-sidebar-right .content-area {
+  float: right;
+  margin: 0 0 0 -300px;
+}
+
+.layout-sidebar-right .site-main {
   margin: 0 0 0 330px;
   padding: 30px 0 30px 30px;
 }
 
-.site-content .widget-area {
+.layout-sidebar-right .site-content .widget-area {
   float: left;
   overflow: hidden;
   width: 300px;
   padding: 30px 0;
 }
 
+/* Sidebar Left */
 /* Header
 -------------------------------------------------------------- */
 .site-branding {

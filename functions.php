@@ -76,6 +76,18 @@ function platform_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Theme layouts
+	add_theme_support(
+		'theme-layouts',
+		array(
+			'single-column' => __( 'Single Column', 'platform' ),
+			'sidebar-right' => __( 'Sidebar Right', 'platform' ),
+			'sidebar-left' => __( 'Sidebar Left', 'platform' )
+		),
+		array( 'default' => 'sidebar-right' )
+	);
+
 }
 endif; // platform_setup
 add_action( 'after_setup_theme', 'platform_setup' );
@@ -198,6 +210,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer-library/customizer-library.php';
 require get_template_directory() . '/inc/customizer-options.php';
 require get_template_directory() . '/inc/styles.php';
+
+/**
+ * Enables post/page/global layouts.
+ */
+require get_template_directory() . '/inc/theme-layouts.php';
 
 /**
  * Load Jetpack compatibility file.
