@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 		            'js/skip-link-focus-fix.js',
 		            'js/jquery.fastclick.js',
 		            'js/jquery.fitvids.js',
-		            'js/global.js'
+		            'js/theme.js'
 		        ],
 		        dest: 'js/platform.min.js',
 		    }

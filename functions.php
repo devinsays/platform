@@ -106,7 +106,7 @@ add_action( 'widgets_init', 'platform_widgets_init' );
 function platform_fonts() {
 
 	// Icon Font
-	wp_enqueue_style( 'platform_icons', get_template_directory_uri() . '/fonts/font-awesome.css', array(), PLATFORM_VERSION );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome.css', array(), '4.2.0' );
 
 }
 add_action( 'wp_enqueue_scripts', 'platform_fonts' );
@@ -157,8 +157,8 @@ function platform_scripts() {
 		);
 
 		wp_enqueue_script(
-			'platform-global',
-			get_template_directory_uri() . '/js/global.js',
+			'platform-theme',
+			get_template_directory_uri() . '/js/theme.js',
 			array( 'jquery', 'platform-fitvids' ),
 			PLATFORM_VERSION,
 			true

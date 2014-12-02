@@ -61,6 +61,7 @@ Development
 * Enhancement: RTL Support
 * Enhancement: Customizer Library
 * Enhancement: Logo option
+* Enhancement: Social Menu
 
 
 0.1.0

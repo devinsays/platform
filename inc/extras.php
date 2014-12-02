@@ -7,17 +7,6 @@
  * @package Platform
  */
 
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- *
- * @param array $args Configuration arguments.
- * @return array
- */
-function platform_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'platform_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -160,3 +149,54 @@ function platform_get_default_footer_text() {
 	);
 	return $text;
 }
+
+/**
+ * Append class "social" to specific off-site links
+ *
+ * @since Platform 0.2.0
+ */
+function platform_social_nav_class( $classes, $item ) {
+
+    if ( 0 == $item->parent && 'custom' == $item->type) {
+
+    	$url = parse_url( $item->url );
+
+    	if ( !isset( $url['host'] ) ) {
+	    	return $classes;
+    	}
+
+    	$base = str_replace( "www.", "", $url['host'] );
+
+    	// @TODO Make this filterable
+    	$social = array(
+    		'behance.com',
+    		'dribbble.com',
+    		'facebook.com',
+    		'flickr.com',
+    		'github.com',
+    		'linkedin.com',
+    		'pinterest.com',
+    		'plus.google.com',
+    		'instagr.am',
+    		'instagram.com',
+    		'skype.com',
+    		'spotify.com',
+    		'twitter.com',
+    		'vimeo.com'
+    	);
+
+    	// Tumblr needs special attention
+    	if ( strpos( $base, 'tumblr' ) ) {
+			$classes[] = 'social';
+		}
+
+    	if ( in_array( $base, $social ) ) {
+	    	$classes[] = 'social';
+    	}
+
+    }
+
+    return $classes;
+
+}
+add_filter( 'nav_menu_css_class', 'platform_social_nav_class', 10, 2 );

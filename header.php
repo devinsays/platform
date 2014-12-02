@@ -24,12 +24,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<nav class="primary-navigation" role="navigation">
-			<div class="col-width">
-				<button class="menu-toggle"><?php _e( 'Menu', 'platform' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</div>
-		</nav>
+		<?php get_template_part( 'partials/navigation', 'primary' ); ?>
 
 		<div class="site-branding">
 			<div class="col-width">
