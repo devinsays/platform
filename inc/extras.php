@@ -141,3 +141,22 @@ add_filter( 'comment_form_default_fields', 'platform_comment_fields' );
     return $comment_field;
 }
 add_filter( 'comment_form_field_comment', 'platform_commtent_textarea' );
+
+/**
+ * Get default footer text
+ *
+ * @return string $text
+ */
+function platform_get_default_footer_text() {
+	$text = sprintf(
+		__( 'Powered by %s', 'platform' ),
+		'<a href="' . esc_url( __( 'http://wordpress.org/', 'platform' ) ) . '">WordPress</a>'
+	);
+	$text .= '<span class="sep"> | </span>';
+	$text .= sprintf(
+		__( '%1$s by %2$s.', 'platform' ),
+			'Platform',
+			'<a href="http://devpress.com/" rel="designer">DevPress</a>'
+	);
+	return $text;
+}

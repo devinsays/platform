@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Platform 0.1.0\n"
+"Project-Id-Version: Theme Platform 0.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2014-06-06 22:26:15+00:00\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.5\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
@@ -183,18 +183,6 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: footer.php:15
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: footer.php:15
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:17
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
 #: functions.php:50
 msgid "Primary Menu"
 msgstr ""
@@ -213,6 +201,78 @@ msgstr ""
 
 #: header.php:29
 msgid "Menu"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:115
+msgid "All"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:116
+msgid "Cyrillic"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:117
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:118
+msgid "Devanagari"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:119
+msgid "Greek"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:120
+msgid "Greek Extended"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:121
+msgid "Khmer"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:122
+msgid "Latin"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:123
+msgid "Latin Extended"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:124
+msgid "Vietnamese"
+msgstr ""
+
+#: inc/customizer-options.php:28 inc/customizer-options.php:34
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer-options.php:42
+msgid "Favicon"
+msgstr ""
+
+#: inc/customizer-options.php:46
+msgid ""
+"File must be <strong>.png</strong> format. Optimal dimensions: <strong>32px "
+"x 32px</strong>."
+msgstr ""
+
+#: inc/customizer-options.php:51
+msgid "Apple Touch Icon"
+msgstr ""
+
+#: inc/customizer-options.php:55
+msgid ""
+"File must be <strong>.png</strong> format. Optimal dimensions: "
+"<strong>152px x 152px</strong>."
+msgstr ""
+
+#: inc/customizer-options.php:63
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer-options.php:69
+msgid "Footer Text"
 msgstr ""
 
 #: inc/extras.php:63
@@ -243,6 +303,18 @@ msgstr ""
 msgid "Comment *"
 msgstr ""
 
+#: inc/extras.php:152
+msgid "Powered by %s"
+msgstr ""
+
+#: inc/extras.php:153
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: inc/extras.php:157
+msgid "%1$s by %2$s."
+msgstr ""
+
 #: inc/template-tags.php:21
 msgid "Posts navigation"
 msgstr ""
@@ -268,7 +340,7 @@ msgid "Meta"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Platform"
+msgid "Theme Platform"
 msgstr ""
 
 #. Author URI of the plugin/theme
@@ -299,6 +371,21 @@ msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+
+#: inc/customizer-library/extensions/fonts.php:184
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:188
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:192
+msgctxt "font style"
+msgid "Monospaced"
+msgstr ""
 
 #: inc/template-tags.php:55
 msgctxt "Previous post link"

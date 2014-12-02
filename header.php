@@ -33,8 +33,25 @@
 
 		<div class="site-branding">
 			<div class="col-width">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+
+				<?php if ( get_theme_mod( 'logo', 0 ) ) {
+					$class = 'site-logo';
+					$output = '<img src="' . esc_url( get_theme_mod( 'logo' ) ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">';
+				} else {
+					$class = 'site-title';
+					$output = get_bloginfo( 'name' );
+				} ?>
+
+				<h1 class="<?php echo esc_attr( $class ); ?>">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php echo $output; ?>
+					</a>
+				</h1>
+
+				<?php if ( get_bloginfo( 'description' ) != '' ) : ?>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php endif; ?>
+
 			</div>
 		</div>
 

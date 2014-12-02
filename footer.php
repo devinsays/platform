@@ -12,11 +12,14 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="col-width">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'platform' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'platform' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'platform' ), 'Platform', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<?php if ( get_theme_mod( 'footer-text', customizer_library_get_default( 'footer-text' ) ) != '' ) : ?>
+			<div class="site-info">
+				<?php echo get_theme_mod( 'footer-text', customizer_library_get_default( 'footer-text' ) ); ?>
+			</div><!-- .site-info -->
+			<?php endif; ?>
 		</div><!-- .col-width -->
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

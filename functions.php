@@ -89,7 +89,7 @@ function platform_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'platform' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -183,11 +183,6 @@ function platform_scripts() {
 add_action( 'wp_enqueue_scripts', 'platform_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -200,7 +195,9 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer-library/customizer-library.php';
+require get_template_directory() . '/inc/customizer-options.php';
+require get_template_directory() . '/inc/styles.php';
 
 /**
  * Load Jetpack compatibility file.

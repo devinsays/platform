@@ -3,17 +3,15 @@ Platform
 
 This is a WordPress starter theme based off of [Underscores](http://underscores.me/) that incorporates modern build tools for developers.  In addition to the lean, well-commented templates that Underscores ships with- Platform includes a number of Grunt tasks to help build modern WordPress themes.
 
-[v0.1.0](https://github.com/devinsays/platform/releases/tag/v0.1.0):
-===
-
 * Generates style.css from SASS files
 * Concatenates and minifies script files
 * Automates vendor prefixes in css
 * Generates a .pot file for translators
 * Automates versioning of style and script files
+* Automates RTL stylesheet generation
 
 Getting Started
----------------
+---
 
 I recommend generating your own theme based on Platform using the Grunt Scaffold (coming soon).  This will allow to select a number of presets, including the theme name, before generating the template files.  But, you can also set it up manually if you like.
 
@@ -58,11 +56,14 @@ grunt build
 ## Versions
 
 Development
-===
+---
 
-* RTL Support
+* Enhancement: RTL Support
+* Enhancement: Customizer Library
+* Enhancement: Logo option
+
 
 0.1.0
-===
+---
 
 * First release
