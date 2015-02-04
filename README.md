@@ -55,6 +55,11 @@ grunt build
 
 ## Versions
 
+Development
+---
+
+* Update: Latest version of Customizer Library
+
 0.2.0
 ---
 

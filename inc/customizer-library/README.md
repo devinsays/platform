@@ -32,6 +32,9 @@ The Customizer Library currently supports these options:
 * Upload
 * Image
 * Color
+* Text
+* URL
+* Range
 * Textarea
 * Select (Typography)
 
@@ -48,18 +51,67 @@ $sections[] = array(
 	'id' => 'example', // Required
 	'title' => __( 'Example Section', 'textdomain' ), // Required
 	'priority' => '30', // Optional
-	'description' => 'Example description' // Optional
+	'description' => 'Example description', // Optional
+	'panel' => 'panel_id' // optional, and it requires WP >= 4.0
 );
 ~~~
 
-The Customizer_Library uses the core function `$wp_customize->add_section($id, $args);` to add sections, and all the same $args are available.  See [codex](http://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_section).
+### Panels
 
-#### Arguments
+Panels are a convenient way to group your different sections.
 
-* title : The visible name of a controller section.
-* priority : This controls the order in which this section appears in the Theme Customizer sidebar.
-* description : This optional argument can add additional descriptive text to the section.
+Here's an example that adds a panel, a section to the panel, and then a text option to that section:
 
+~~~php
+// Panel Example
+$panel = 'panel';
+
+$panels[] = array(
+	'id' => $panel,
+	'title' => __( 'Panel Examples', 'demo' ),
+	'priority' => '100'
+);
+
+$section = 'panel-section';
+
+$sections[] = array(
+	'id' => $section,
+	'title' => __( 'Panel Section', 'demo' ),
+	'priority' => '10',
+	'panel' => $panel
+);
+
+$options['example-panel-text'] = array(
+	'id' => 'example-panel-text',
+	'label'   => __( 'Example Text Input', 'demo' ),
+	'section' => $section,
+	'type'    => 'text',
+);
+~~~
+
+The Customizer_Library uses the core function `$wp_customize->add_panel( $id, $args );` to add panels, and all the same $args are available. See [codex](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/).
+
+### Text
+
+~~~php
+$options['example-text'] = array(
+	'id' => 'example-text',
+	'label'   => __( 'Example Text Input', 'textdomain' ),
+	'section' => $section,
+	'type'    => 'text',
+);
+~~~
+
+### URL
+
+~~~php
+$options['example-url'] = array(
+	'id' => 'example-url',
+	'label'   => __( 'Example URL Input', 'textdomain' ),
+	'section' => $section,
+	'type'    => 'url',
+);
+~~~
 
 ### Checkbox
 
@@ -158,6 +210,23 @@ $options['example-font'] = array(
 	'type'    => 'select',
 	'choices' => customizer_library_get_font_choices(),
 	'default' => 'Monoton'
+);
+~~~
+
+### Range
+
+~~~php
+$options['example-range'] = array(
+	'id' => 'example-range',
+	'label'   => __( 'Example Range Input', 'demo' ),
+	'section' => $section,
+	'type'    => 'range',
+	'input_attrs' => array(
+        'min'   => 0,
+        'max'   => 10,
+        'step'  => 1,
+        'style' => 'color: #0a0',
+	)
 );
 ~~~
 
@@ -264,13 +333,23 @@ if ( $mod != customizer_library_get_default( $setting ) ) {
 }
 ~~~
 
-## Changelog
+## Change Log
+
+Development
+===
+
+* Enhancement: Add text input option
+* Enhancement: Sort system fonts and webfonts within dropdown
+* Enhancement: Add Panels Support, from WP 4.0
+* Enhancement: Add support for "url" type
+* Enhancement: Add support for "range" type
+* Update: Change how setting parameters are added
 
 1.2.0
 ===
 
-* Allow setting parameters
-* Refactor interface loop
+* Enhancement: Allow setting parameters
+* Update: Refactor interface loop
 
 1.1.0
 ===

@@ -6,18 +6,28 @@
  * @author		The Theme Foundry
  */
 
-if ( ! function_exists( 'customizer_library_get_all_fonts' ) ) :
+if ( ! function_exists( 'customizer_library_get_font_choices' ) ) :
 /**
- * Compile font options from different sources.
+ * Packages the font choices into value/label pairs for use with the customizer.
  *
  * @since  1.0.0.
  *
- * @return array    All available fonts.
+ * @return array    The fonts in value/label pairs.
  */
 function customizer_library_get_all_fonts() {
+	$heading1       = array( 1 => array( 'label' => sprintf( '--- %s ---', __( 'Standard Fonts', 'customizer-library' ) ) ) );
 	$standard_fonts = customizer_library_get_standard_fonts();
+	$heading2       = array( 2 => array( 'label' => sprintf( '--- %s ---', __( 'Google Fonts', 'customizer-library' ) ) ) );
 	$google_fonts   = customizer_library_get_google_fonts();
-	return apply_filters( 'customizer_library_all_fonts', array_merge( $standard_fonts, $google_fonts ) );
+
+	/**
+	 * Allow for developers to modify the full list of fonts.
+	 *
+	 * @since 1.3.0.
+	 *
+	 * @param array    $fonts    The list of all fonts.
+	 */
+	return apply_filters( 'customizer_library_all_fonts', array_merge( $heading1, $standard_fonts, $heading2, $google_fonts ) );
 }
 endif;
 
@@ -112,16 +122,16 @@ if ( ! function_exists( 'customizer_library_get_google_font_subsets' ) ) :
  */
 function customizer_library_get_google_font_subsets() {
 	return array(
-		'all'          => __( 'All', 'platform' ),
-		'cyrillic'     => __( 'Cyrillic', 'platform' ),
-		'cyrillic-ext' => __( 'Cyrillic Extended', 'platform' ),
-		'devanagari'   => __( 'Devanagari', 'platform' ),
-		'greek'        => __( 'Greek', 'platform' ),
-		'greek-ext'    => __( 'Greek Extended', 'platform' ),
-		'khmer'        => __( 'Khmer', 'platform' ),
-		'latin'        => __( 'Latin', 'platform' ),
-		'latin-ext'    => __( 'Latin Extended', 'platform' ),
-		'vietnamese'   => __( 'Vietnamese', 'platform' ),
+		'all'          => __( 'All', 'textdomain' ),
+		'cyrillic'     => __( 'Cyrillic', 'textdomain' ),
+		'cyrillic-ext' => __( 'Cyrillic Extended', 'textdomain' ),
+		'devanagari'   => __( 'Devanagari', 'textdomain' ),
+		'greek'        => __( 'Greek', 'textdomain' ),
+		'greek-ext'    => __( 'Greek Extended', 'textdomain' ),
+		'khmer'        => __( 'Khmer', 'textdomain' ),
+		'latin'        => __( 'Latin', 'textdomain' ),
+		'latin-ext'    => __( 'Latin Extended', 'textdomain' ),
+		'vietnamese'   => __( 'Vietnamese', 'textdomain' ),
 	);
 }
 endif;
@@ -181,15 +191,15 @@ if ( ! function_exists( 'customizer_library_get_standard_fonts' ) ) :
 function customizer_library_get_standard_fonts() {
 	return array(
 		'serif' => array(
-			'label' => _x( 'Serif', 'font style', 'platform' ),
+			'label' => _x( 'Serif', 'font style', 'textdomain' ),
 			'stack' => 'Georgia,Times,"Times New Roman",serif'
 		),
 		'sans-serif' => array(
-			'label' => _x( 'Sans Serif', 'font style', 'platform' ),
+			'label' => _x( 'Sans Serif', 'font style', 'textdomain' ),
 			'stack' => '"Helvetica Neue",Helvetica,Arial,sans-serif'
 		),
 		'monospace' => array(
-			'label' => _x( 'Monospaced', 'font style', 'platform' ),
+			'label' => _x( 'Monospaced', 'font style', 'textdomain' ),
 			'stack' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace'
 		)
 	);
@@ -2538,6 +2548,40 @@ function customizer_library_get_google_fonts() {
 			),
 			'subsets' => array(
 				'latin',
+			),
+		),
+		'Fira Sans' => array(
+			'label'    => 'Fira Sans',
+			'variants' => array(
+				'300',
+				'300italic',
+				'400',
+				'400italic',
+				'500',
+				'500italic',
+				'700',
+				'700italic',
+			),
+			'subsets' => array(
+				'latin',
+				'greek',
+				'cyrillic',
+				'latin-ext',
+				'cyrillic-ext',
+			),
+		),
+		'Fira Mono' => array(
+			'label'    => 'Fira Mono',
+			'variants' => array(
+				'400',
+				'700',
+			),
+			'subsets' => array(
+				'latin',
+				'greek',
+				'cyrillic',
+				'latin-ext',
+				'cyrillic-ext',
 			),
 		),
 		'Fjalla One' => array(
@@ -5907,6 +5951,26 @@ function customizer_library_get_google_fonts() {
 				'latin-ext',
 			),
 		),
+		'Rubik One' => array(
+			'label'    => 'Rubik One',
+			'variants' => array(
+				'400',
+			),
+			'subsets' => array(
+				'latin',
+				'latin-ext',
+			),
+		),
+		'Rubik Mono One' => array(
+			'label'    => 'Rubik Mono One',
+			'variants' => array(
+				'400',
+			),
+			'subsets' => array(
+				'latin',
+				'latin-ext',
+			),
+		),
 		'Rufina' => array(
 			'label'    => 'Rufina',
 			'variants' => array(
@@ -6428,6 +6492,18 @@ function customizer_library_get_google_fonts() {
 			'subsets' => array(
 				'latin',
 				'vietnamese',
+				'latin-ext',
+			),
+		),
+		'Source Serif Pro' => array(
+			'label'    => 'Source Serif Pro',
+			'variants' => array(
+				'400',
+				'600',
+				'700',
+			),
+			'subsets' => array(
+				'latin',
 				'latin-ext',
 			),
 		),
