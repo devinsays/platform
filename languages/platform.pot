@@ -1,14 +1,14 @@
-# Copyright (C) 2014 Author Name
+# Copyright (C) 2015 Author Name
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Theme Platform 0.1.0\n"
+"Project-Id-Version: Theme Platform 0.2.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2014-06-06 22:26:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
@@ -339,12 +339,12 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: inc/theme-layouts.php:459 inc/theme-layouts.php:566
-#: inc/theme-layouts.php:651
+#: inc/theme-layouts.php:458 inc/theme-layouts.php:565
+#: inc/theme-layouts.php:650
 msgid "Layout"
 msgstr ""
 
-#: inc/theme-layouts.php:684
+#: inc/theme-layouts.php:683
 msgid "Global Layout"
 msgstr ""
 
@@ -424,7 +424,7 @@ msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/theme-layouts.php:364
+#: inc/theme-layouts.php:363
 #. Translators: Default theme layout option.
 msgctxt "theme layout"
 msgid "Default"

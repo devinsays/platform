@@ -55,7 +55,7 @@ grunt build
 
 ## Versions
 
-Development
+0.2.0
 ---
 
 * Enhancement: RTL Support
@@ -63,6 +63,7 @@ Development
 * Enhancement: Logo option
 * Enhancement: Social Menu
 * Enhancement: Theme Layouts
+* Update: Use clearfix class
 
 
 0.1.0

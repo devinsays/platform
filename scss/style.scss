@@ -4,7 +4,7 @@ Theme URI: http://website.com
 Author: Author Name
 Author URI: http://website.com
 Description: Description
-Version: 0.1.0
+Version: 0.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: platform
@@ -80,47 +80,46 @@ a:active {
 /* Layout
 -------------------------------------------------------------- */
 
-/* Single Column */
-
-.content-area {
-	width: 100%;
-}
-.site-main {
-	padding: 30px 0 30px;
-}
-
-/* Sidebar Right */
-
-.layout-sidebar-right .content-area {
-	float: left;
-	margin: 0 -300px 0 0;
-}
-.layout-sidebar-right .site-main {
-	margin: 0 330px 0 0;
-	padding: 30px 30px 30px 0;
-}
-.layout-sidebar-right .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: 300px;
+.site-content {
 	padding: 30px 0;
 }
 
-/* Sidebar Left */
+@media screen and (min-width: 880px ) {
 
-.layout-sidebar-left .content-area {
-	float: right;
-	margin: 0 0 0 -300px;
-}
-.layout-sidebar-left .site-main {
-	margin: 0 0 0 330px;
-	padding: 30px 0 30px 30;
-}
-.layout-sidebar-left .site-content .widget-area {
-	float: left;
-	overflow: hidden;
-	width: 300px;
-	padding: 30px 0;
+	/* Single Column */
+	.content-area {
+		width: 100%;
+	}
+
+	/* Sidebar Right */
+	.layout-sidebar-right .content-area {
+		float: left;
+		margin: 0 -300px 0 0;
+	}
+	.layout-sidebar-right .site-main {
+		margin: 0 330px 0 0;
+		padding: 30px 30px 30px 0;
+	}
+	.layout-sidebar-right .site-content .widget-area {
+		float: right;
+		overflow: hidden;
+		width: 300px;
+	}
+
+	/* Sidebar Left */
+	.layout-sidebar-left .content-area {
+		float: right;
+		margin: 0 0 0 -300px;
+	}
+	.layout-sidebar-left .site-main {
+		margin: 0 0 0 330px;
+		padding: 30px 0 30px 30;
+	}
+	.layout-sidebar-left .site-content .widget-area {
+		float: left;
+		overflow: hidden;
+		width: 300px;
+	}
 }
 
 /* Header
@@ -227,13 +226,16 @@ a:active {
 /* Clearings
 --------------------------------------------------------------*/
 
-.clear:before,
-.clear:after {
-    content: '';
-    display: table;
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
 }
-.clear:after {
-    clear: both;
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
 }
 
 /* Widgets
@@ -523,23 +525,4 @@ object {
 }
 .gallery-caption {
 	font-size:14px;
-}
-
-/* Responsive
---------------------------------------------------------------*/
-
-@media screen and (max-width: 880px ) {
-
-	.content-area {
-		float: none;
-		margin: 0;
-	}
-	.site-main {
-		margin: 0;
-	}
-	.site-content .widget-area {
-		float: none;
-		width: auto;
-	}
-
 }

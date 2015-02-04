@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'PLATFORM_VERSION', '0.1.0' );
+define( 'PLATFORM_VERSION', '0.2.0' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.

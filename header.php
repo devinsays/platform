@@ -52,5 +52,5 @@
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content clear">
+	<div id="content" class="site-content clearfix">
 		<div class="col-width">

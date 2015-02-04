@@ -4,7 +4,7 @@ Theme URI: http://website.com
 Author: Author Name
 Author URI: http://website.com
 Description: Description
-Version: 0.1.0
+Version: 0.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: platform
@@ -299,8 +299,7 @@ input[type="submit"] {
   padding: 8px 20px;
   background-color: #2ba6cb;
   color: #fff;
-  -webkit-transition: background-color 200ms ease-out;
-          transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
   font-size: 15px;
 }
 
@@ -356,8 +355,7 @@ textarea {
   margin: 0 0 15px 0;
   padding: 8px;
   width: 100%;
-  -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-          transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
 }
 
 input[type="text"]:focus,
@@ -427,8 +425,7 @@ h4, h5, h6 {
 a {
   color: #2ba6cb;
   text-decoration: none;
-  -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover,
@@ -446,34 +443,50 @@ a:active {
 
 /* Layout
 -------------------------------------------------------------- */
-/* Single Column */
-.content-area {
-  width: 100%;
-}
-
-.site-main {
-  padding: 30px 0 30px;
-}
-
-/* Sidebar Right */
-.layout-sidebar-right .content-area {
-  float: right;
-  margin: 0 0 0 -300px;
-}
-
-.layout-sidebar-right .site-main {
-  margin: 0 0 0 330px;
-  padding: 30px 0 30px 30px;
-}
-
-.layout-sidebar-right .site-content .widget-area {
-  float: left;
-  overflow: hidden;
-  width: 300px;
+.site-content {
   padding: 30px 0;
 }
 
-/* Sidebar Left */
+@media screen and (min-width: 880px) {
+  /* Single Column */
+  .content-area {
+    width: 100%;
+  }
+
+  /* Sidebar Right */
+  .layout-sidebar-right .content-area {
+    float: right;
+    margin: 0 0 0 -300px;
+  }
+
+  .layout-sidebar-right .site-main {
+    margin: 0 0 0 330px;
+    padding: 30px 0 30px 30px;
+  }
+
+  .layout-sidebar-right .site-content .widget-area {
+    float: left;
+    overflow: hidden;
+    width: 300px;
+  }
+
+  /* Sidebar Left */
+  .layout-sidebar-left .content-area {
+    float: left;
+    margin: 0 -300px 0 0;
+  }
+
+  .layout-sidebar-left .site-main {
+    margin: 0 330px 0 0;
+    padding: 30px 30 30px 0;
+  }
+
+  .layout-sidebar-left .site-content .widget-area {
+    float: right;
+    overflow: hidden;
+    width: 300px;
+  }
+}
 /* Header
 -------------------------------------------------------------- */
 .site-branding {
@@ -567,8 +580,8 @@ a:active {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-          transition: transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
 }
 
 .primary-navigation ul ul {
@@ -859,14 +872,18 @@ a:active {
 
 /* Clearings
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after {
-  content: '';
+.clearfix:before,
+.clearfix:after {
+  content: " ";
   display: table;
 }
 
-.clear:after {
+.clearfix:after {
   clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
 }
 
 /* Widgets
@@ -1189,22 +1206,4 @@ object {
 
 .gallery-caption {
   font-size: 14px;
-}
-
-/* Responsive
---------------------------------------------------------------*/
-@media screen and (max-width: 880px) {
-  .content-area {
-    float: none;
-    margin: 0;
-  }
-
-  .site-main {
-    margin: 0;
-  }
-
-  .site-content .widget-area {
-    float: none;
-    width: auto;
-  }
 }
