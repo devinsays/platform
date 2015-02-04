@@ -59,6 +59,7 @@ Development
 ---
 
 * Update: Latest version of Customizer Library
+* Update: Use theme new functions available in WordPress 4.1
 
 0.2.0
 ---

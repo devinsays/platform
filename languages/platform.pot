@@ -32,62 +32,6 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:27
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:30
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:33
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:36
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:39
-msgid "Asides"
-msgstr ""
-
-#: archive.php:42
-msgid "Galleries"
-msgstr ""
-
-#: archive.php:45
-msgid "Images"
-msgstr ""
-
-#: archive.php:48
-msgid "Videos"
-msgstr ""
-
-#: archive.php:51
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:54
-msgid "Links"
-msgstr ""
-
-#: archive.php:57
-msgid "Statuses"
-msgstr ""
-
-#: archive.php:60
-msgid "Audios"
-msgstr ""
-
-#: archive.php:63
-msgid "Chats"
-msgstr ""
-
-#: archive.php:66
-msgid "Archives"
-msgstr ""
-
 #: comments.php:35 comments.php:54
 msgid "Comment navigation"
 msgstr ""
@@ -183,71 +127,79 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: functions.php:50
+#: functions.php:58
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:63
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:92
 msgid "Single Column"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:93
 msgid "Sidebar Right"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:94
 msgid "Sidebar Left"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:111
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:23
+#: header.php:22
 msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:115
+#: inc/customizer-library/extensions/fonts.php:18
+msgid "Standard Fonts"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:20
+msgid "Google Fonts"
+msgstr ""
+
+#: inc/customizer-library/extensions/fonts.php:125
 msgid "All"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:116
+#: inc/customizer-library/extensions/fonts.php:126
 msgid "Cyrillic"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:117
+#: inc/customizer-library/extensions/fonts.php:127
 msgid "Cyrillic Extended"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:118
+#: inc/customizer-library/extensions/fonts.php:128
 msgid "Devanagari"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:119
+#: inc/customizer-library/extensions/fonts.php:129
 msgid "Greek"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:120
+#: inc/customizer-library/extensions/fonts.php:130
 msgid "Greek Extended"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:121
+#: inc/customizer-library/extensions/fonts.php:131
 msgid "Khmer"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:122
+#: inc/customizer-library/extensions/fonts.php:132
 msgid "Latin"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:123
+#: inc/customizer-library/extensions/fonts.php:133
 msgid "Latin Extended"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:124
+#: inc/customizer-library/extensions/fonts.php:134
 msgid "Vietnamese"
 msgstr ""
 
@@ -372,16 +324,6 @@ msgstr ""
 msgid "Author Name"
 msgstr ""
 
-#: archive.php:33
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:36
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
 #: comments.php:28
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -389,17 +331,17 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer-library/extensions/fonts.php:184
+#: inc/customizer-library/extensions/fonts.php:194
 msgctxt "font style"
 msgid "Serif"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:188
+#: inc/customizer-library/extensions/fonts.php:198
 msgctxt "font style"
 msgid "Sans Serif"
 msgstr ""
 
-#: inc/customizer-library/extensions/fonts.php:192
+#: inc/customizer-library/extensions/fonts.php:202
 msgctxt "font style"
 msgid "Monospaced"
 msgstr ""
