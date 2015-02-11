@@ -50,7 +50,7 @@ npm install
 And do your first build:
 
 ```SHELL
-grunt build
+grunt
 ```
 
 ## Versions
